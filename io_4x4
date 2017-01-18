@@ -1,0 +1,554 @@
+#!/bin/bash
+
+
+#    1 – Red		1000000 10000000
+#    2 – Green		100000 1000000
+#    3 – Yellow		10000 100000
+#    6 – Cyan		1000 10000
+#    5 – Magenta	100 1000
+#    7 – White		10 100
+#    0 – Black		0 10
+
+#    4 – Blue not used
+
+
+let start=$6/500
+let initial=$7/500
+
+for r in {0..15..1}
+	do
+	eval "x[$r]="0;
+done
+for e in {0..15..1}
+	do
+	eval "y[$e]="0;
+done
+
+x[0]=30;
+y[0]=15;
+x[1]=30;
+y[1]=33;
+x[2]=30;
+y[2]=51;
+x[3]=30;
+y[3]=69;
+
+x[4]=21;
+y[4]=15;
+x[5]=21;
+y[5]=33;
+x[6]=21;
+y[6]=51;
+x[7]=21;
+y[7]=69;
+
+x[8]=12;
+y[8]=15;
+x[9]=12;
+y[9]=33;
+x[10]=12;
+y[10]=51;
+x[11]=12;
+y[11]=69;
+
+x[12]=3;
+y[12]=15;
+x[13]=3;
+y[13]=33;
+x[14]=3;
+y[14]=51;
+x[15]=3;
+y[15]=69;
+
+
+echo "`tput setab 0; tput setaf 7`"
+echo
+echo
+echo '             --------          --------          --------          --------'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             --------          --------          --------          --------'
+echo '                                                                     '
+echo ''
+echo '                                                                     '
+echo '             --------          --------          --------          --------'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             --------          --------          --------          --------'
+echo '                                                                     '
+echo
+echo '                                                                     '
+echo '             --------          --------          --------          --------'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             --------          --------          --------          --------'
+echo '                                                                     '
+echo
+echo '                                                                     '
+echo '             --------          --------          --------          --------'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             |      |          |      |          |      |          |      |'
+echo '             --------          --------          --------          --------'
+echo '                                                                     '
+
+for i in {0..64..1}
+	do
+	eval "vi[$i]="0;
+
+done
+for i in {0..64..1}
+	do
+	eval "vi1[$i]="0;
+
+done
+for i in {0..64..1}
+	do
+	eval "vi2[$i]="0;
+
+done
+for i in {0..64..1}
+	do
+	eval "vi3[$i]="0;
+
+done
+for i in {0..64..1}
+	do
+	eval "vi4[$i]="0;
+
+done
+
+
+
+#echo "`tput cup 14 90``tput setaf 1``tput setab 0``tput bold`ligne:   ``"
+echo "`tput cup 15 90``tput setaf 1``tput setab 0``tput bold`clock:  ``"
+echo "`tput cup 17 90``tput setaf 1``tput setab 0``tput bold```"
+echo "`tput cup 18 90``tput setaf 1``tput setab 0``tput bold`         ioio   ``"
+echo "`tput cup 19 90``tput setaf 1``tput setab 0``tput bold`       -------- ``"
+echo "`tput cup 20 90``tput setaf 1``tput setab 0``tput bold`      i|      |i``"
+echo "`tput cup 21 90``tput setaf 1``tput setab 0``tput bold`      o|  io  |o``"
+echo "`tput cup 22 90``tput setaf 1``tput setab 0``tput bold`      i|  io  |i``"
+echo "`tput cup 23 90``tput setaf 1``tput setab 0``tput bold`      o|      |o``"
+echo "`tput cup 24 90``tput setaf 1``tput setab 0``tput bold`       -------- ``"
+echo "`tput cup 25 90``tput setaf 1``tput setab 0``tput bold`         ioio   ``"
+echo "`tput cup 27 90``tput setaf 0``tput setab 0``tput bold`      ((0< && <=10))``"
+echo "`tput cup 28 90``tput setaf 7``tput setab 0``tput bold`     ((10< && <=100))``"
+echo "`tput cup 29 90``tput setaf 5``tput setab 0``tput bold`    ((100< && <=1000))``"
+echo "`tput cup 30 90``tput setaf 6``tput setab 0``tput bold`   ((1000< && <=10000))``"
+echo "`tput cup 31 90``tput setaf 3``tput setab 0``tput bold`  ((10000< && <=100000))``"
+echo "`tput cup 32 90``tput setaf 2``tput setab 0``tput bold` ((100000< && <=1000000))``"
+echo "`tput cup 33 90``tput setaf 1``tput setab 0``tput bold`((1000000< && <=10000000))``"
+#############################################
+	i=`awk ' NR==(nr+1){
+
+	print "vi[0]="$1
+	for (i = 1; i <= 64; i++)
+	{
+			{
+			print "vi[" i "]=" $(i+1)
+			}
+	}
+
+	exit
+
+	}' nr=$initial $1`
+
+	i1=`awk ' NR==(nr+1){
+
+	#print "vi1[0]="$1
+	for (i = 1; i <= 64; i++)
+	{
+			{
+			print "vi1[" i "]=" $(i+1)
+			}
+	}
+
+	exit
+
+	}' nr=$initial $2`
+
+	i2=`awk ' NR==(nr+1){
+
+	#print "vi2[0]="$1
+	for (i = 1; i <= 64; i++)
+	{
+			{
+			print "vi2[" i "]=" $(i+1)
+			}
+	}
+
+	exit
+
+	}' nr=$initial $3`
+
+	i3=`awk ' NR==(nr+1){
+
+	#print "vi3[0]="$1
+	for (i = 1; i <= 64; i++)
+	{
+			{
+			print "vi3[" i "]=" $(i+1)
+			}
+	}
+
+	exit
+
+	}' nr=$initial $4`
+
+	i4=`awk ' NR==(nr+1){
+
+	print "vi4[0]="$1
+	for (i = 1; i <= 64; i++)
+	{
+			{
+			print "vi4[" i "]=" $(i+1)
+			}
+	}
+
+	exit
+
+	}' nr=$initial $5`
+
+	eval $i
+	eval $i1
+	eval $i2
+	eval $i3
+	eval $i4
+#############################################
+for j in {1..9999..1}
+	do
+
+	for r in {0..64..1}
+		do
+		eval "va[$r]="0;
+		done
+	for r in {0..64..1}
+		do
+		eval "va1[$r]="0;
+		done
+	for r in {0..64..1}
+		do
+		eval "va2[$r]="0;
+		done
+	for r in {0..64..1}
+		do
+		eval "va3[$r]="0;
+		done
+	for r in {0..64..1}
+		do
+		eval "va4[$r]="0;
+		done
+
+
+	z=`awk ' NR==(nr+mr){
+
+	print "va[0]="$1
+	for (i = 1; i <= 64; i++)
+	{
+			{
+			print "va[" i "]=" $(i+1)
+			}
+	}
+
+	exit
+
+	}' nr=$j mr=$start $1`
+
+	z1=`awk ' NR==(nr+mr){
+
+	#print "va1[0]="$1
+	for (i = 1; i <= 64; i++)
+	{
+			{
+			print "va1[" i "]=" $(i+1)
+			}
+	}
+
+	exit
+
+	}' nr=$j mr=$start $2`
+
+	z2=`awk ' NR==(nr+mr){
+
+	#print "va2[0]="$1
+	for (i = 1; i <= 64; i++)
+	{
+			{
+			print "va2[" i "]=" $(i+1)
+			}
+	}
+
+	exit
+
+	}' nr=$j mr=$start $3`
+
+	z3=`awk ' NR==(nr+mr){
+
+	#print "va3[0]="$1
+	for (i = 1; i <= 64; i++)
+	{
+			{
+			print "va3[" i "]=" $(i+1)
+			}
+	}
+
+	exit
+
+	}' nr=$j mr=$start $4`
+
+	z4=`awk ' NR==(nr+mr){
+
+	print "va4[0]="$1
+	for (i = 1; i <= 64; i++)
+	{
+			{
+			print "va4[" i "]=" $(i+1)
+			}
+	}
+
+	exit
+
+	}' nr=$j mr=$start $5`
+
+	eval $z
+	eval $z1
+	eval $z2
+	eval $z3
+	eval $z4
+	
+for k in {1..64..1}
+	do
+	if (( "${va[$k]}" > "${vi[$k]}" )); then
+	var=$((( k - 1 ) / 4))
+	var2=$((( k - 1 ) % 4))
+	var3=$((${va[$k]} - ${vi[$k]}))
+
+	if ((0<=var3 && var3<=10))
+	then
+	eval "var4="0
+		elif ((10<var3 && var3<=100))
+		then
+		eval "var4="7
+			elif ((100<var3 && var3<=1000))
+			then
+			eval "var4="5
+				elif ((1000<var3 && var3<=10000))
+				then
+				eval "var4="6
+					elif ((10000<var3 && var3<=100000))
+					then
+					eval "var4="3
+						elif ((100000<var3 && var3<=1000000))
+						then
+						eval "var4="2
+							elif ((1000000<var3 && var3<=10000000))
+							then
+							eval "var4="1
+								else echo $var3
+	fi
+	case $var2 in
+
+	0)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]})) $((${y[$var]}+$var2))``tput bold`i``"
+	;;
+	1)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]})) $((${y[$var]}+$var2))``tput bold`o``"
+	;;
+	2)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]})) $((${y[$var]}+$var2))``tput bold`i``"
+	;;
+	3)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]})) $((${y[$var]}+$var2))``tput bold`o``"
+	;;
+	esac
+fi
+done
+
+for k in {1..64..1}
+	do
+	if (( "${va1[$k]}" > "${vi1[$k]}" )); then
+	var=$((( k - 1 ) / 4)) 
+	var2=$((( k - 1 ) % 4)) 
+	var3=$((${va1[$k]} - ${vi1[$k]}))
+
+	if ((0<=var3 && var3<=10))
+	then
+	eval "var4="0
+		elif ((10<var3 && var3<=100))
+		then
+		eval "var4="7
+			elif ((100<var3 && var3<=1000))
+			then
+			eval "var4="5
+				elif ((1000<var3 && var3<=10000))
+				then
+				eval "var4="6
+					elif ((10000<var3 && var3<=100000))
+					then
+					eval "var4="3
+						elif ((100000<var3 && var3<=1000000))
+						then
+						eval "var4="2
+							elif ((1000000<var3 && var3<=10000000))
+							then
+							eval "var4="1
+								else echo $var3
+	fi
+
+	case $var2 in
+
+
+	0)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+7)) $((${y[$var]}+$var2))``tput bold`i``"
+	;;
+	1)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+7)) $((${y[$var]}+$var2))``tput bold`o``"
+	;;
+	2)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+7)) $((${y[$var]}+$var2))``tput bold`i``"
+	;;
+	3)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+7)) $((${y[$var]}+$var2))``tput bold`o``"
+	;;
+	esac
+fi
+done
+
+for k in {1..64..1}
+	do
+	if (( "${va2[$k]}" > "${vi2[$k]}" )); then
+	var=$((( k - 1 ) / 4))
+	var2=$((( k - 1 ) % 4)) 
+	var3=$((${va2[$k]} - ${vi2[$k]}))
+	if ((0<=var3 && var3<=10))
+	then
+	eval "var4="0
+		elif ((10<var3 && var3<=100))
+		then
+		eval "var4="7
+			elif ((100<var3 && var3<=1000))
+			then
+			eval "var4="5
+				elif ((1000<var3 && var3<=10000))
+				then
+				eval "var4="6
+					elif ((10000<var3 && var3<=100000))
+					then
+					eval "var4="3
+						elif ((100000<var3 && var3<=1000000))
+						then
+						eval "var4="2
+							elif ((1000000<var3 && var3<=10000000))
+							then
+							eval "var4="1
+								else echo $var3
+	fi
+	case $var2 in
+
+	0)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+2+$var2)) $((${y[$var]}+6))``tput bold`i``"
+	;;
+	1)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+2+$var2)) $((${y[$var]}+6))``tput bold`o``"
+	;;
+	2)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+2+$var2)) $((${y[$var]}+6))``tput bold`i``"
+	;;
+	3)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+2+$var2)) $((${y[$var]}+6))``tput bold`o``"
+	;;
+	esac
+fi
+done
+
+for k in {1..64..1}
+	do
+	if (( "${va3[$k]}" > "${vi3[$k]}" )); then
+	var=$((( k - 1 ) / 4)) #cluster
+	var2=$((( k - 1 ) % 4)) #cmd rsp in out
+	var3=$((${va3[$k]} - ${vi3[$k]}))
+
+	if ((0<=var3 && var3<=10))
+	then
+	eval "var4="0
+		elif ((10<var3 && var3<=100))
+		then
+		eval "var4="7
+			elif ((100<var3 && var3<=1000))
+			then
+			eval "var4="5
+				elif ((1000<var3 && var3<=10000))
+				then
+				eval "var4="6
+					elif ((10000<var3 && var3<=100000))
+					then
+					eval "var4="3
+						elif ((100000<var3 && var3<=1000000))
+						then
+						eval "var4="2
+							elif ((1000000<var3 && var3<=10000000))
+							then
+							eval "var4="1
+								else echo $var3
+	fi
+
+	case $var2 in
+
+
+	0)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+2+$var2)) $((${y[$var]}-3))``tput bold`i``"
+	;;
+	1)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+2+$var2)) $((${y[$var]}-3))``tput bold`o``"
+	;;
+	2)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+2+$var2)) $((${y[$var]}-3))``tput bold`i``"
+	;;
+	3)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+2+$var2)) $((${y[$var]}-3))``tput bold`o``"
+	;;
+	esac
+fi
+done
+
+for k in {1..64..1}
+	do
+	if (( "${va4[$k]}" > "${vi4[$k]}" )); then
+	var=$((( k - 1 ) / 4))
+	var2=$((( k - 1 ) % 4))
+	var3=$((${va4[$k]} - ${vi4[$k]}))
+	if ((0<=var3 && var3<=10))
+	then
+	eval "var4="0
+		elif ((10<var3 && var3<=100))
+		then
+		eval "var4="7
+			elif ((100<var3 && var3<=1000))
+			then
+			eval "var4="5
+				elif ((1000<var3 && var3<=10000))
+				then
+				eval "var4="6
+					elif ((10000<var3 && var3<=100000))
+					then
+					eval "var4="3
+						elif ((100000<var3 && var3<=1000000))
+						then
+						eval "var4="2
+							elif ((1000000<var3 && var3<=10000000))
+							then
+							eval "var4="1
+								else echo $var3
+	fi
+			case $var2 in
+
+			0)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+3)) $((${y[$var]}+1+$var2))``tput bold`i``"
+			;;
+			1)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+3)) $((${y[$var]}+1+$var2))``tput bold`o``"
+			;;
+			2)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+4)) $((${y[$var]}-1+$var2))``tput bold`i``"
+			;;
+			3)echo "`tput setaf $var4``tput setab 0``tput cup $((${x[$var]}+4)) $((${y[$var]}-1+$var2))``tput bold`o``"
+			;;
+			esac
+	
+fi
+done
+
+#echo "`tput cup 15 99``tput setaf 1``tput setab 0``tput bold`${va[0]}``"
+echo "`tput cup 14 99``tput setaf 1``tput setab 0``tput bold`$j``"
+
+
+done
+
